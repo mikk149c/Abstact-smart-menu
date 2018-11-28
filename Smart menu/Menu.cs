@@ -7,8 +7,8 @@ namespace Smart_menu
 	{
 		string menuName;
 		private List<IMenuPoint> menuPoints = new List<IMenuPoint>();
-		int pointer = 0;
-		private int outputLine { get { return menuName.Split('\n').Length + menuPoints.Count; } }
+		private int pointer = 0;
+		private int outputLine { get { return menuName.Split('\n').Length + menuPoints.Count + 1; } }
 
 		public Menu(string menuName)
 		{
@@ -60,7 +60,11 @@ namespace Smart_menu
 		private static void displayInstructions()
 		{
 			Console.SetCursorPosition(0, Console.WindowHeight-1);
+			Console.BackgroundColor = ConsoleColor.White;
+			Console.ForegroundColor = ConsoleColor.Black;
 			Console.Write("Press ESC to return");
+			Console.BackgroundColor = ConsoleColor.Black;
+			Console.ForegroundColor = ConsoleColor.White;
 		}
 
 		private void displayMenuPoints()
