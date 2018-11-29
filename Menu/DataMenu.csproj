@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Smart menu\Smart menu.csproj" />
   </ItemGroup>
 
 </Project>

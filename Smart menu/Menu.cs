@@ -9,6 +9,7 @@ namespace Smart_menu
 		private List<IMenuPoint> menuPoints = new List<IMenuPoint>();
 		private int pointer = 0;
 		private int outputLine { get { return menuName.Split('\n').Length + menuPoints.Count + 1; } }
+		public bool ExitAfterInvoke { get; set; } = false;
 
 		public Menu(string menuName)
 		{
@@ -43,7 +44,7 @@ namespace Smart_menu
 						break;
 				}
 			}
-			while (!key.Equals(ConsoleKey.Escape));
+			while (!key.Equals(ConsoleKey.Escape) && !(key.Equals(ConsoleKey.Enter) && ExitAfterInvoke));
 			Console.Clear();
 		}
 

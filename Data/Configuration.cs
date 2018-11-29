@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Smart_menu;
 
-namespace Abstact_smart_menu
+namespace Data
 {
-	class Configuration : IMenuPoint
+	public class Configuration
 	{
 		private string name;
+		public string Name { get { return name; } set { name = value; } }
 
 		public Configuration(string name)
 		{

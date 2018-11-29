@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Smart_menu;
+using Data;
 
-namespace Abstact_smart_menu
+namespace DataMenu
 {
 	class SelectConfig : IMenuPoint
 	{
-		List<Configuration> configurations = new List<Configuration>
-			{
-			new Configuration("CFG1"),
-			new Configuration("CFG2"),
-			new Configuration("CFG3"),
-			new Configuration("CFG4"),
-			new Configuration("Bober")
-			};
+		private DataController dataController;
+		public SelectConfig(DataController dataController)
+		{
+			this.dataController = dataController;
+		}
+
 		public string GetMenuPointName()
 		{
 			return "Select Config";
@@ -25,8 +24,9 @@ namespace Abstact_smart_menu
 		public void Invoke()
 		{
 			Menu menu = new Menu("Configurations\n\n");
-			foreach (IMenuPoint m in configurations)
-				menu.AddMenuPoint(m);
+			menu.ExitAfterInvoke = true;
+			foreach (Configuration c in dataController.GetListOfConfig())
+				menu.AddMenuPoint(new ConfigurationActionMenu(c, dataController));
 			menu.Activate();
 		}
 	}

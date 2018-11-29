@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Smart_menu;
+using DataMenu;
+using Data;
 
 namespace Abstact_smart_menu
 {
@@ -11,8 +12,8 @@ namespace Abstact_smart_menu
 	{
 		static void Main(string[] args)
 		{
-			Menu menu = new Menu("Menu or\nwhatever");
-			menu.AddMenuPoint(new SelectConfig());
+			DataController dataController = new DataController();
+			MainMenu menu = new MainMenu(dataController);
 			menu.Activate();
 		}
 	}

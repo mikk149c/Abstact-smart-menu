@@ -43,18 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Smart menu\Smart menu.csproj">
-      <Project>{ae915527-71fc-4770-9f15-f8afb637a274}</Project>
-      <Name>Smart menu</Name>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{2b62d256-fb02-4d9b-ad78-96c5abe9871d}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Menu\DataMenu.csproj">
+      <Project>{0b03ae55-786c-4263-bcec-e2dfd13b96cb}</Project>
+      <Name>DataMenu</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
