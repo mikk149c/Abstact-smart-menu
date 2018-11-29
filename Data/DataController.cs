@@ -22,6 +22,8 @@ namespace Data
 		public void Delete(string name)
 		{
 			repo.DeleteConfig(name);
+			Console.WriteLine($"Deleted {name}");
+			Console.ReadKey();
 		}
 	}
 }

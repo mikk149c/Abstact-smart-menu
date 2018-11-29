@@ -25,26 +25,34 @@ namespace Smart_menu
 		{
 			Console.Clear();
 			displayMenu();
-			ConsoleKey key;
-			do
+			if (!menuPoints.Count.Equals(0))
 			{
-				key = Console.ReadKey(true).Key;
-				switch (key)
+				ConsoleKey key;
+				do
 				{
-					case ConsoleKey.UpArrow:
-						movePointerUp();
-						break;
-					case ConsoleKey.DownArrow:
-						movePointerDown();
-						break;
-					case ConsoleKey.Enter:
-						clearOutput();
-						menuPoints[pointer].Invoke();
-						displayMenu();
-						break;
+					key = Console.ReadKey(true).Key;
+					switch (key)
+					{
+						case ConsoleKey.UpArrow:
+							movePointerUp();
+							break;
+						case ConsoleKey.DownArrow:
+							movePointerDown();
+							break;
+						case ConsoleKey.Enter:
+							clearOutput();
+							menuPoints[pointer].Invoke();
+							displayMenu();
+							break;
+					}
 				}
+				while (!key.Equals(ConsoleKey.Escape) && !(key.Equals(ConsoleKey.Enter) && ExitAfterInvoke));
 			}
-			while (!key.Equals(ConsoleKey.Escape) && !(key.Equals(ConsoleKey.Enter) && ExitAfterInvoke));
+			else
+			{
+				Console.WriteLine("There are no menu points");
+				Console.ReadKey();
+			}
 			Console.Clear();
 		}
 
