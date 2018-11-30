@@ -130,27 +130,11 @@ namespace Smart_menu
 			}
 		}
 
-		private void clearCurrentLine()
-		{
-			int currentLineCursor = Console.CursorTop;
-			Console.SetCursorPosition(0, Console.CursorTop);
-			Console.Write(new string(' ', Console.WindowWidth));
-			Console.SetCursorPosition(0, currentLineCursor);
-		}
-
-		private void clearLine(int i)
-		{
-			int currentLineCursor = Console.CursorTop;
-			Console.SetCursorPosition(0, i);
-			Console.Write(new string(' ', Console.WindowWidth));
-			Console.SetCursorPosition(0, currentLineCursor);
-		}
-
 		private void clearOutput()
 		{
 			for (int i = outputLine; i < Console.WindowHeight-2; i++)
 			{
-				clearLine(i);
+				MenuUtility.ClearLine(i);
 			}
 		}
 	}
