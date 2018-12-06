@@ -101,7 +101,6 @@ namespace Smart_menu
 			int menuNameLineCount = menuName.Split('\n').Length;
 			Console.SetCursorPosition(0, menuNameLineCount + i);
 			displayMenuPoint(i);
-			Console.SetCursorPosition(0, outputLine);
 		}
 
 		private void movePointerDown()
@@ -128,6 +127,7 @@ namespace Smart_menu
 				updateMenuPoint(point1ToUpdate);
 				updateMenuPoint(point2ToUpdate);
 			}
+			Console.SetCursorPosition(0, outputLine);
 		}
 
 		private void clearOutput()
